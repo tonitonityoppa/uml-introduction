@@ -70,18 +70,38 @@ left to right direction
 ' Animal <|-down- Dog
 ' Animal <|-down- Cat
 
-class Word {
----
-+ enter():void
+' class Word {
+' ---
+' + enter():void
+' }
+' class Excel {
+' ---
+' + enter():void
+' }
+' circle "keyboard" as I1
+' Word --( I1
+' Excel --( I1
+' class User {
+' }
+' I1 <-- User:<< use >>
+
+object "<u>空車リスト2: 空車リスト</u>" as k2 {
+日付="2023/4/27"
 }
-class Excel {
----
-+ enter():void
+object "<u>空車リスト1: 空車リスト</u>" as k1 {
+日付
 }
-circle "keyboard" as I1
-Word --( I1
-Excel --( I1
-class User {
+object "<u>車情報1: 車</u>" as car1 {
+管理番号=5
+車種
+貸出料金=15000
 }
-I1 <-- User:<< use >>
+object "<u>車情報2: 車</u>" as car2 {
+管理番号=6
+車種
+貸出料金
+}
+k1 -- car1
+k1 -- car2
+k2 -- car1
 @enduml
