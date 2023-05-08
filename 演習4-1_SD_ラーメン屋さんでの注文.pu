@@ -1,0 +1,21 @@
+@startuml 演習4-1
+hide footbox
+Actor 客 as user
+participant "フロア定員" as teiin
+participant "料理人" as cooker
+
+mainframe sd ラーメン屋
+
+activate user
+user -> teiin :ラーメンを注文する
+activate teiin
+teiin -> cooker :料理を指示する
+activate cooker
+cooker -> cooker :料理をする
+teiin <<-- cooker :ラーメン
+deactivate cooker
+deactivate teiin
+user <<-- teiin :ラーメン
+deactivate user
+
+@enduml
