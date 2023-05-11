@@ -1,10 +1,14 @@
 @startuml 利用者と予約画面
 hide footbox
-participant ":"
+skinparam style strictuml
+participant ":利用者" as user <<user>>
 participant ":予約画面" as yoyaku
+activate user
+user ->> yoyaku: ログインメッセージ ()
 activate yoyaku
-    yoyaku ->> yoyaku: 入力情報チェック（）
+    yoyaku -> yoyaku: 認証（）
     activate yoyaku
     ' deactivate yoyaku
 deactivate yoyaku
+deactivate user
 @enduml

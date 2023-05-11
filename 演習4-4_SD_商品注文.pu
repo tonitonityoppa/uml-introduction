@@ -1,0 +1,28 @@
+@startuml
+hide footbox
+skinparam style strictuml
+actor 受注係 as kakari
+participant ":注文登録画面" as toroku <<boundary>>
+participant "注文" as tyumon <<entity>>
+participant ":商品" as syohin <<entity>>
+
+activate kakari
+kakari -> toroku:　商品情報確認（）
+
+activate toroku
+toroku -> syohin: 商品情報確認
+activate syohin
+syohin -->> toroku: 商品情報取得
+deactivate syohin
+toroku -> toroku: 商品情報表示（）
+activate toroku
+deactivate toroku
+deactivate toroku
+
+kakari -> toroku: 商品登録（注文情報）
+activate toroku
+create tyumon
+toroku -->> tyumon: 商品登録（注文情報）<<create>>
+
+deactivate kakari
+@enduml
