@@ -1,6 +1,6 @@
-@startuml
+@startuml 商品注文
 hide footbox
-skinparam style strictuml
+skinparam style strictuml 
 actor 受注係 as kakari
 participant ":注文登録画面" as toroku <<boundary>>
 participant "注文" as tyumon <<entity>>
